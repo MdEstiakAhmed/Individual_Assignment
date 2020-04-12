@@ -23,4 +23,27 @@ class HomeController extends Controller
             // return ($user);
         }
     }
+
+    public function addBusCounter(Request $request)
+    {
+        return view('busManagerViews.addBusCounter');
+    }
+
+    public function insertBusCounter(Request $request)
+    {
+        $validation = $request->validate([
+            'name'=>'required',
+            'location' => 'required',
+            'operator'=>'required|email|unique:bus_counters'
+        ]);
+
+        if($validation != null){
+            DB::table('bus_counters')->insert(
+                ['name' => $request->name, 'location' => $request->location, 'operator'=>'fahim@gmail.com']
+            );
+
+            $request->session()->put('insertBusCounter', $request->email);
+            return redirect('/supportStuffList');
+        }
+    }
 }

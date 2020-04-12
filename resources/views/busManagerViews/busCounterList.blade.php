@@ -9,6 +9,8 @@
     <h1>manager list</h1>
     <a href="/home">home</a>
     <br>
+    <a href="/addBusCounter">add bus counter</a>
+    <br>
     <a href="/logout">logout</a>
     <br><br>
 

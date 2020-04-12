@@ -36,3 +36,7 @@ Route::post('/addSupportStuff', 'AdminController\HomeController@InsertSupportStu
 
 Route::get('/busCounterList', 'BusManagerController\HomeController@busCounterList');
 
+Route::get('/addBusCounter', 'BusManagerController\HomeController@addBusCounter');
+
+Route::post('/addBusCounter', 'BusManagerController\HomeController@insertBusCounter');
+
