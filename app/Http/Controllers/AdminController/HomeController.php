@@ -47,4 +47,9 @@ class HomeController extends Controller
         }
         return view('adminViews.supportStuffList')->with('users',$data);
     }
+
+    public function addSupportStuff(Request $request)
+    {
+        return view('adminViews.addSupportStuff');
+    }
 }

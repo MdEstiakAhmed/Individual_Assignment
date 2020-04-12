@@ -10,6 +10,8 @@
 
     <a href="/home">home</a>
     <br>
+    <a href="/addSupportStuff">add Support Staff</a>
+    <br>
     <a href="/logout">logout</a>
     <br><br>
 
@@ -27,28 +29,7 @@
         <br><br>
     </form>
     <div id="supportStuff">
-        <table border="1">
-            <tr>
-                <th>name</th>
-                <th>email</th>
-                <th>company</th>
-                <th>registered</th>
-                <th>action</th>
-            </tr>
-            
-            @foreach($users as $user)
-            <tr>
-                <td>{{$user['name']}}</td>
-                <td>{{$user['email']}}</td>
-                <td>{{$user['company']}}</td>
-                <td>{{$user['registered']}}</td>
-                <td>
-                    <a href="#">edit</a>
-                    <a href="#">delete</a>
-                </td>
-            </tr>
-            @endforeach
-        </table>
+        
     </div>
     <table border="1">
 		<tr>

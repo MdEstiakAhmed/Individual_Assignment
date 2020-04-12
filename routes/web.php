@@ -30,3 +30,5 @@ Route::get('/supportStuffList', 'AdminController\HomeController@stuffList');
 
 Route::post('/searching', 'AdminController\HomeController@search');
 
+Route::get('/addSupportStuff', 'AdminController\HomeController@addSupportStuff');
+
