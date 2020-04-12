@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/logout', 'GeneralController\LogoutController@index');
 
 Route::get('/', 'GeneralController\LoginController@index');
 

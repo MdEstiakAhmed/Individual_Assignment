@@ -44,7 +44,7 @@ class LoginController extends Controller
     
             $user_type = json_encode($user->role);
             if($user_type == json_encode("admin")){
-                return view('adminViews.home');
+                return view('adminViews.home', ['user' => $user]);
             }
             else{
                 return redirect('/');

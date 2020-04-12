@@ -7,5 +7,7 @@
 </head>
 <body>
     <h1>admin home</h1>
+    <a href="/logout">logout</a>
+    <p>{{$user->id}}</p>
 </body>
 </html>
