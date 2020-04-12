@@ -18,3 +18,5 @@ Route::post('/', 'GeneralController\loginController@formValidation')->name('logi
 
 Route::get('/home', 'GeneralController\loginController@authorization')->name('login.authorization');
 
+Route::get('/registration', 'GeneralController\RegistrationController@index');
+

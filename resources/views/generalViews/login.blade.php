@@ -24,5 +24,7 @@
         <br><br>
         <input type="submit" name="submit" value="login">
     </form>
+    <br>
+    <button><a href="/registration">registration</a></button>
 </body>
 </html>
