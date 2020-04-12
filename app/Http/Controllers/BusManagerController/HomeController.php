@@ -42,7 +42,7 @@ class HomeController extends Controller
                 ['name' => $request->name, 'location' => $request->location, 'operator'=>'fahim@gmail.com']
             );
 
-            $request->session()->put('insertBusCounter', $request->email);
+            $request->session()->put('insertBusCounter', $request->name);
             return redirect('/busCounterList');
         }
     }

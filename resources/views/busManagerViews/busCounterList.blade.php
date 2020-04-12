@@ -14,6 +14,13 @@
     <a href="/logout">logout</a>
     <br><br>
 
+    @if(Request()->session()->has('insertBusCounter'))
+        <h4>successfully add {{Request()->session()->get('insertBusCounter')}} bus counter</h4>
+        @php
+        Request()->session()->forget('insertBusCounter');
+    @endphp
+    @endif
+
     <form method="get">
         <input type="text" name="search" id="search" placeholder="search">
         <input type="button" value="search">
