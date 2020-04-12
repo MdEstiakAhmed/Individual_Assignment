@@ -46,6 +46,9 @@ class LoginController extends Controller
             if($user_type == json_encode("admin")){
                 return view('adminViews.home', ['user' => $user]);
             }
+            else if($user_type == json_encode("bus.manager")){
+                return view('busManagerViews.home', ['user' => $user]);
+            }
             else{
                 return redirect('/');
             }
