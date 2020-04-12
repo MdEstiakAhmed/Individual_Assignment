@@ -28,7 +28,7 @@ class LoginController extends Controller
             if($user != null){
                 $userData = json_encode($user->id);
                 $request->session()->put('id', $userData);
-                return redirect('/authorization');
+                return redirect('/home');
             }
             else{
                 return redirect('/');
@@ -37,6 +37,21 @@ class LoginController extends Controller
     }
 
     public function authorization(Request $request){
-        return "okay";
+        if($request->session()->has('id')){
+            $user = DB::table('users')
+                        ->where('id', $request->session()->get('id'))
+                        ->first();
+    
+            $user_type = json_encode($user->role);
+            if($user_type == json_encode("admin")){
+                return view('adminViews.home');
+            }
+            else{
+                return redirect('/');
+            }
+        }
+        else{
+            return redirect('/');
+        }
     }
 }
