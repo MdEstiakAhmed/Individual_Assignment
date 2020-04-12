@@ -125,10 +125,26 @@ class HomeController extends Controller
         }
     }
 
-    public function updateBus(Request $request)
+    public function updateBus(Request $request, $busId)
     {
         if($request->session()->has('id')){
-            
+            $validation = $request->validate([
+                'name'=>'required',
+                'operator'=>'required|email',
+                'location'=>'required',
+                'seat_row'=>'required',
+                'seat_column'=>'required'
+            ]);
+
+            if($validation != null){
+                DB::table('buses')
+                ->where('id', $busId)
+                ->update(
+                    ['name' => $request->name, 'operator' => $request->operator, 'location'=>$request->location, 'seat_row'=>$request->seat_row, 'seat_column'=>$request->seat_column]
+                );
+
+                return redirect('/busList');
+            }
         }
     }
 }

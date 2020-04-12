@@ -49,7 +49,7 @@
         @enderror
         <br><br>
 
-        <input type="submit" name="submit" value="add bus">
+        <input type="submit" name="submit" value="edit bus">
     </form>
 </body>
 </html>

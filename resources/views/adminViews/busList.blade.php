@@ -20,7 +20,7 @@
 			<th>location</th>
             <th>operator</th>
             <th>seat_row</th>
-            <th>seat_row</th>
+            <th>seat_column</th>
 			<th>action</th>
 		</tr>
 		
@@ -30,7 +30,7 @@
 			<td>{{$bus->location}}</td>
             <td>{{$bus->operator}}</td>
             <td>{{$bus->seat_row}}</td>
-            <td>{{$bus->seat_row}}</td>
+            <td>{{$bus->seat_column}}</td>
 			<td>
 				<a href="/editBus/{{$bus->id}}">edit</a>
 			</td>
