@@ -22,3 +22,7 @@ Route::get('/registration', 'GeneralController\RegistrationController@index');
 
 Route::post('/registration', 'GeneralController\RegistrationController@insert');
 
+Route::get('/busManagerList', 'AdminController\HomeController@index');
+
+Route::get('/busManagerDelete', 'AdminController\HomeController@index');
+

@@ -6,8 +6,8 @@
     <title>admin home</title>
 </head>
 <body>
-    <h1>admin home</h1>
+    <h1>welcome {{$user->name}}</h1>
+    <a href="/busManagerList">Bus Manager List</a>
     <a href="/logout">logout</a>
-    <p>{{$user->id}}</p>
 </body>
 </html>
