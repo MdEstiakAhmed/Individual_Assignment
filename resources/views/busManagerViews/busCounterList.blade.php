@@ -12,6 +12,13 @@
     <a href="/logout">logout</a>
     <br><br>
 
+    <form method="get">
+        <input type="text" name="search" id="search" placeholder="search">
+        <input type="button" value="search">
+        
+        <br><br>
+    </form>
+
     @if(Request()->session()->has('deleteMessage'))
         <h4>{{Request()->session()->get('deleteMessage')}}</h4>
         @php
