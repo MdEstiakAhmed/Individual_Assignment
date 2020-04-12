@@ -124,4 +124,11 @@ class HomeController extends Controller
             // return $bus;
         }
     }
+
+    public function updateBus(Request $request)
+    {
+        if($request->session()->has('id')){
+            
+        }
+    }
 }
