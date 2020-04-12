@@ -11,7 +11,18 @@ class RegistrationController extends Controller
     	return view('generalViews.registration');
     }
 
-    public function insert(){
-        return "insert";
+    public function insert(Request $request){
+        $validation = $request->validate([
+            'name'=>'required',
+            'email'=>'required|email|unique:users',
+            'password'=>'required',
+            'confirmPassword'=>'required|same:password',
+            'company'=>'required|unique:users'
+        ]);
+
+        if($validation != null){
+            return "insert";
+        }
+
     }
 }
