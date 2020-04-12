@@ -37,4 +37,14 @@ class HomeController extends Controller
             return redirect('/busManagerList');
         }
     }
+
+    public function search() {
+        $search_text = Request::get('keyword');
+        if ($search_text==NULL) {
+            $data= User::all();
+        } else {
+            $data=User::where('name','LIKE', '%'.$search_text.'%')->get();
+        }
+        return view('adminViews.supportStuffList')->with('users',$data);
+    }
 }
