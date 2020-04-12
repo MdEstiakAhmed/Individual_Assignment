@@ -10,4 +10,8 @@ class RegistrationController extends Controller
     public function index(){
     	return view('generalViews.registration');
     }
+
+    public function insert(){
+        return "insert";
+    }
 }

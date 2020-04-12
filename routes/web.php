@@ -20,3 +20,5 @@ Route::get('/home', 'GeneralController\loginController@authorization')->name('lo
 
 Route::get('/registration', 'GeneralController\RegistrationController@index');
 
+Route::post('/registration', 'GeneralController\RegistrationController@insert');
+
