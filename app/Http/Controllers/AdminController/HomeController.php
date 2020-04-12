@@ -12,8 +12,13 @@ class HomeController extends Controller
         if($request->session()->has('id')){
             $users = User::all()
             ->where('role', '=', 'bus.manager');
-            
+
             return view('adminViews.managerList', ['users'=>$users]);
         }
+    }
+
+    public function delete($id){
+        // $user = User::find($id);
+        return redirect('/busManagerList');
     }
 }

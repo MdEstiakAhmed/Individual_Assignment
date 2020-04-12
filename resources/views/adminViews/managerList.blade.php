@@ -28,7 +28,7 @@
 			<td>{{$user['company']}}</td>
 			<td>{{$user['registered']}}</td>
 			<td>
-				<a href="/busManagerDelete/{{$user['id']}}">delete</a>
+				<a href="/busManagerDelete/{{$user['id']}}" onclick="return confirm('Are you sure to delete?')">delete</a>
 			</td>
 		</tr>
 		@endforeach
