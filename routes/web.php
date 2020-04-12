@@ -32,3 +32,5 @@ Route::post('/searching', 'AdminController\HomeController@search');
 
 Route::get('/addSupportStuff', 'AdminController\HomeController@addSupportStuff');
 
+Route::post('/addSupportStuff', 'AdminController\HomeController@InsertSupportStuff');
+

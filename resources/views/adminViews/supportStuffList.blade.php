@@ -15,6 +15,13 @@
     <a href="/logout">logout</a>
     <br><br>
 
+    @if(Request()->session()->has('insertStuff'))
+        <h4>successfully insert {{Request()->session()->get('insertStuff')}}</h4>
+        @php
+            Request()->session()->forget('insertStuff');
+        @endphp
+    @endif
+
     @if(Request()->session()->has('deleteMessage'))
         <h4>{{Request()->session()->get('deleteMessage')}}</h4>
         @php

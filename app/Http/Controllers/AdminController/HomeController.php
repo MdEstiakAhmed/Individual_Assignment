@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -51,5 +52,24 @@ class HomeController extends Controller
     public function addSupportStuff(Request $request)
     {
         return view('adminViews.addSupportStuff');
+    }
+
+    public function InsertSupportStuff(Request $request)
+    {
+        $validation = $request->validate([
+            'name'=>'required',
+            'email'=>'required|email|unique:users',
+            'password'=>'required|min:3',
+            'confirmPassword'=>'required|same:password'
+        ]);
+
+        if($validation != null){
+            DB::table('users')->insert(
+                ['name' => $request->name, 'email' => $request->email, 'password'=>$request->password, 'registered'=>date("d/m/Y"), 'validated'=> 1, 'role'=>'support.stuff', 'company'=>null, 'operator'=>null]
+            );
+
+            $request->session()->put('insertStuff', $request->email);
+            return redirect('/supportStuffList');
+        }
     }
 }
