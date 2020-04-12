@@ -46,5 +46,5 @@ Route::get('/addBus', 'AdminController\HomeController@addBus');
 
 Route::post('/addBus', 'AdminController\HomeController@insertBus');
 
-Route::get('/editBus/{id}', 'AdminController\HomeController@editBus');
+Route::get('/editBus/{busId}', 'AdminController\HomeController@editBus');
 

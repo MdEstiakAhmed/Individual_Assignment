@@ -114,12 +114,14 @@ class HomeController extends Controller
         }
     }
 
-    public function editBus(Request $request)
+    public function editBus(Request $request, $busId)
     {
         if($request->session()->has('id')){
-            $buses = DB::table('buses')
+            $bus = DB::table('buses')
+                        ->where('id', '=', $busId)
                         ->get();
-            return view('adminViews.editBus', ['buses'=>$buses]);
+            return view('adminViews.editBus', ['bus'=>$bus]);
+            // return $bus;
         }
     }
 }
