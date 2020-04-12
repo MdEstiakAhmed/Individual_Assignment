@@ -9,6 +9,7 @@
     <h1>welcome {{$user->name}}</h1>
     <a href="/busManagerList">Bus Manager List</a><br><br>
     <a href="/supportStuffList">Support Staff list</a><br><br>
+    <a href="/busList">bus list</a><br><br>
     <a href="/logout">logout</a>
 </body>
 </html>

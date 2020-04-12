@@ -72,4 +72,20 @@ class HomeController extends Controller
             return redirect('/supportStuffList');
         }
     }
+
+    public function busList(Request $request)
+    {
+        if($request->session()->has('id')){
+
+            $buses = DB::table('buses')
+                        ->get();
+
+            return view('adminViews.busList', ['buses'=>$buses]);
+        }
+    }
+
+    public function addBus(Request $request)
+    {
+        return view('adminViews.addBus');
+    }
 }
