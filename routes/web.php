@@ -15,5 +15,5 @@ Route::get('/', 'GeneralController\LoginController@index');
 
 Route::post('/', 'GeneralController\loginController@formValidation')->name('login.formValidation');
 
-Route::get('/authentication', 'GeneralController\loginController@authentication')->name('login.authentication');
+Route::get('/authorization', 'GeneralController\loginController@authorization')->name('login.authorization');
 

@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers\GeneralController;
 
-use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\HomeRequest;
-use Validator;
+use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
@@ -19,11 +17,26 @@ class LoginController extends Controller
             'email'=>'required|email|exists:users',
             'password'=>'required'
         ]);
+        
+        if($validation != null){
+            $user = DB::table('users')
+                    ->where('email', $request->email)
+                    ->where('password', $request->password)
+                    ->first();
 
-        return redirect('/authentication');
+            
+            if($user != null){
+                $userData = json_encode($user->id);
+                $request->session()->put('id', $userData);
+                return redirect('/authorization');
+            }
+            else{
+                return redirect('/');
+            }
+        }
     }
 
-    public function authentication(Request $request){
-        return "ok";
+    public function authorization(Request $request){
+        return "okay";
     }
 }
