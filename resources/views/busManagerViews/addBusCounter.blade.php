@@ -17,7 +17,7 @@
         @enderror
         <br><br>
 
-        <label for="location">email:</label><br>
+        <label for="location">location:</label><br>
         <input type="text" name="location" id="location" placeholder="enter your location">
         @error('location')
             <span>{{$message}}</span>
@@ -31,7 +31,7 @@
         @enderror
         <br><br>
 
-        <input type="submit" name="submit" value="add support stuff">
+        <input type="submit" name="submit" value="add bus counter">
     </form>
 </body>
 </html>

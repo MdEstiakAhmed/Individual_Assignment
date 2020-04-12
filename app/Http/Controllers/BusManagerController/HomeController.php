@@ -34,7 +34,7 @@ class HomeController extends Controller
         $validation = $request->validate([
             'name'=>'required',
             'location' => 'required',
-            'operator'=>'required|email|unique:bus_counters'
+            'operator'=>'required|email'
         ]);
 
         if($validation != null){
@@ -43,7 +43,7 @@ class HomeController extends Controller
             );
 
             $request->session()->put('insertBusCounter', $request->email);
-            return redirect('/supportStuffList');
+            return redirect('/busCounterList');
         }
     }
 }
