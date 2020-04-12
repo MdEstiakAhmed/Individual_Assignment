@@ -44,3 +44,5 @@ Route::get('/busList', 'AdminController\HomeController@busList');
 
 Route::get('/addBus', 'AdminController\HomeController@addBus');
 
+Route::post('/addBus', 'AdminController\HomeController@insertBus');
+

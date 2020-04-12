@@ -86,6 +86,31 @@ class HomeController extends Controller
 
     public function addBus(Request $request)
     {
-        return view('adminViews.addBus');
+        if($request->session()->has('id')){
+            return view('adminViews.addBus');
+        }
+        
+    }
+
+    public function insertBus(Request $request)
+    {
+        if($request->session()->has('id')){
+            $validation = $request->validate([
+                'name'=>'required',
+                'operator'=>'required|email',
+                'location'=>'required',
+                'seat_row'=>'required',
+                'seat_column'=>'required'
+            ]);
+    
+            if($validation != null){
+                DB::table('buses')->insert(
+                    ['name' => $request->name, 'operator' => $request->operator, 'location'=>$request->location, 'seat_row'=>$request->seat_row, 'seat_column'=>$request->seat_column]
+                );
+    
+                $request->session()->put('insertBus', $request->name);
+                return redirect('/busList');
+            }
+        }
     }
 }
