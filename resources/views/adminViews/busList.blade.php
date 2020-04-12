@@ -32,7 +32,7 @@
             <td>{{$bus->seat_row}}</td>
             <td>{{$bus->seat_row}}</td>
 			<td>
-				<a href="/#" onclick="return confirm('Are you sure to delete?')">delete</a>
+				<a href="/editBus/{{$bus->id}}">edit</a>
 			</td>
 		</tr>
 		@endforeach
