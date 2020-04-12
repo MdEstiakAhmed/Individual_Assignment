@@ -26,3 +26,5 @@ Route::get('/busManagerList', 'AdminController\HomeController@index');
 
 Route::get('/busManagerDelete/{id}', 'AdminController\HomeController@delete');
 
+Route::get('/supportStuffList', 'AdminController\HomeController@stuffList');
+
