@@ -18,7 +18,13 @@ class HomeController extends Controller
     }
 
     public function delete($id){
-        // $user = User::find($id);
-        return redirect('/busManagerList');
+        if(User::destroy($id)){
+            Request()->session()->put('deleteMessage', 'successfully delete');
+            return redirect('/busManagerList');
+        }
+        else{
+            Request()->session()->put('deleteMessage', 'Can not delete');
+            return redirect('/busManagerList');
+        }
     }
 }

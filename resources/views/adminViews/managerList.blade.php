@@ -11,6 +11,13 @@
     <br>
     <a href="/logout">logout</a>
     <br><br>
+
+    @if(Request()->session()->has('deleteMessage'))
+        <h4>{{Request()->session()->get('deleteMessage')}}</h4>
+        @php
+            Request()->session()->forget('deleteMessage');
+        @endphp
+    @endif
     
     <table border="1">
 		<tr>
